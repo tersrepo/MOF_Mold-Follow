@@ -46,16 +46,3 @@ Kurulum ve Çalıştırma
         Visual Studio’da projeyi açtıktan sonra F5 (Debug) veya Ctrl+F5 (Run Without Debugging) yaparak çalıştırabilirsiniz.
         Tarayıcıda site açıldığında menü üzerinden “İstasyon Raporları”, “Kalıp Raporları”, “Maliyet Raporları”, “Kalite” vb. sayfalara erişebilirsiniz.
 
-Önemli Sayfalar
-
-    formadministasyon.aspx / formadminkalip.aspx / ...
-        Kalıp raporlama, istasyon kartları, maliyet örneklemleri, arıza yönetimi gibi ana modüller.
-
-    kalite.aspx
-        Kalite departmanına ait veri girişi (stok seçme, proses göz/çevrim) ekranı.
-
-    kaliterapor.aspx
-        Kalite verilerini tablo halinde listeleme, Excel’e aktarma vb.
-
-    HedefMiktar.aspx
-        Montaj panelindeki proseslerin başlangıç-bitiş tarihleri, duruş süreleri, gerçekleşen adet vs. bilgilerin bulunduğu raporlama sayfası.
