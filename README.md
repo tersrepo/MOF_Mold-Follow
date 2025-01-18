@@ -12,9 +12,9 @@ Genel Özellikler
         Arıza ilerleyişini veya tamamlanmış durumlarını listeleme ve güncelleme.
 
     Kalite Departmanı Proses Takibi
-        kalite.aspx: Kalite formu, stok (ürün) numarasına ait proses göz/çevrim sürelerini görüntüleme ve gerektiğinde güncelleme.
-        kaliterapor.aspx: Kaydedilen proses verilerini listeleme (ASPxGridView ile) ve indirilebilir raporlar oluşturma.
-        HedefMiktar.aspx: Montaj paneli benzeri ekranda, başlama ve bitiş tarihleri seçilerek hedef üretim, gerçekleşen adet, duruş süreleri, çevrim süreleri gibi verilerin izlenmesi.
+        Kalite formu, stok (ürün) numarasına ait proses göz/çevrim sürelerini görüntüleme ve gerektiğinde güncelleme.
+        Kaydedilen proses verilerini listeleme (ASPxGridView ile) ve indirilebilir raporlar oluşturma.
+        Montaj paneli benzeri ekranda, başlama ve bitiş tarihleri seçilerek hedef üretim, gerçekleşen adet, duruş süreleri, çevrim süreleri gibi verilerin izlenmesi.
 
     Makine / Personel / Kalıp Tabloları
         MSSQL’de tanımlı makine/istasyon, personel tabloları, kalıp ve detay tabloları kullanılır.
