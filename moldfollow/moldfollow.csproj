@@ -1,0 +1,1264 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7A6D6625-B243-4BEE-B652-283062313E10}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>moldfollow</RootNamespace>
+    <AssemblyName>moldfollow</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44345</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Azure.Core, Version=1.25.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Azure.Core.1.25.0\lib\net461\Azure.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Azure.Identity, Version=1.7.0.0, Culture=neutral, PublicKeyToken=92742159e12e44c8, processorArchitecture=MSIL">
+      <HintPath>..\packages\Azure.Identity.1.7.0\lib\netstandard2.0\Azure.Identity.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxPivotGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.ASPxThemes.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Bootstrap.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.Resources.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Web.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.SqlClient, Version=5.0.0.0, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.SqlClient.5.1.2\lib\net462\Microsoft.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client, Version=4.47.2.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Identity.Client.4.47.2\lib\net461\Microsoft.Identity.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client.Extensions.Msal, Version=2.19.3.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Identity.Client.Extensions.Msal.2.19.3\lib\net45\Microsoft.Identity.Client.Extensions.Msal.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Abstractions, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Abstractions.6.24.0\lib\net472\Microsoft.IdentityModel.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.24.0\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.6.24.0\lib\net472\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.6.24.0\lib\net472\Microsoft.IdentityModel.Protocols.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Protocols.OpenIdConnect, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Protocols.OpenIdConnect.6.24.0\lib\net472\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.24.0\lib\net472\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=6.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.6.0.1\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.6.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.24.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.6.24.0\lib\net472\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory.Data, Version=1.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.Data.1.0.2\lib\net461\System.Memory.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.4.3.0\lib\net462\System.Runtime.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.ProtectedData, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.ProtectedData.4.7.0\lib\net461\System.Security.Cryptography.ProtectedData.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.6.0.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Text.Encodings.Web, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.7.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\elegant-icons.css" />
+    <Content Include="css\flaticon.css" />
+    <Content Include="css\font-awesome.min.css" />
+    <Content Include="css\owl.carousel.min.css" />
+    <Content Include="css\slicknav.min.css" />
+    <Content Include="css\style.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\dist\css\bootstrap-theme.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\dist\css\bootstrap.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\dist\css\bootstrap.min.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\dist\js\bootstrap.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\dist\js\bootstrap.min.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\dist\js\npm.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\about.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\apple-touch-icon.png" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\brand\bootstrap-outline.svg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\brand\bootstrap-punchout.svg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\brand\bootstrap-solid.svg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\css\docs.min.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\css\ie10-viewport-bug-workaround.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\css\src\docs.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\css\src\pygments-manni.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\flash\ZeroClipboard.swf" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\img\components.png" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\img\devices.png" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\img\expo-lyft.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\img\expo-newsweek.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\img\expo-riot.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\img\expo-vogue.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\img\sass-less.png" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\js\customize.min.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\js\docs.min.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\js\ie-emulation-modes-warning.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\js\ie10-viewport-bug-workaround.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\js\ie8-responsive-file-warning.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\js\raw-files.min.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\js\src\application.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\js\src\customizer.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\js\vendor\anchor.min.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\js\vendor\autoprefixer.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\js\vendor\Blob.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\js\vendor\FileSaver.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\js\vendor\holder.min.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\js\vendor\jquery.min.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\js\vendor\jszip.min.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\js\vendor\less.min.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\js\vendor\uglify.min.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\js\vendor\ZeroClipboard.min.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\browser-bugs.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\components.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\css.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\customize.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\dist\css\bootstrap-theme.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\dist\css\bootstrap.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\dist\css\bootstrap.min.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\dist\js\bootstrap.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\dist\js\bootstrap.min.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\dist\js\npm.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\blog\blog.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\blog\index.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\carousel\carousel.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\carousel\index.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\cover\cover.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\cover\index.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\dashboard\dashboard.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\dashboard\index.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\grid\grid.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\grid\index.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\jumbotron-narrow\index.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\jumbotron-narrow\jumbotron-narrow.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\jumbotron\index.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\jumbotron\jumbotron.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\justified-nav\index.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\justified-nav\justified-nav.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\navbar-fixed-top\index.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\navbar-fixed-top\navbar-fixed-top.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\navbar-static-top\index.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\navbar-static-top\navbar-static-top.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\navbar\index.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\navbar\navbar.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\non-responsive\index.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\non-responsive\non-responsive.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\offcanvas\index.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\offcanvas\offcanvas.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\offcanvas\offcanvas.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\screenshots\blog.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\screenshots\carousel.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\screenshots\cover.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\screenshots\dashboard.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\screenshots\equal-height-columns.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\screenshots\grid.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\screenshots\jumbotron-narrow.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\screenshots\jumbotron.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\screenshots\justified-nav.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\screenshots\navbar-fixed.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\screenshots\navbar-static.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\screenshots\navbar.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\screenshots\non-responsive.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\screenshots\offcanvas.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\screenshots\sign-in.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\screenshots\starter-template.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\screenshots\sticky-footer-navbar.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\screenshots\sticky-footer.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\screenshots\theme.jpg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\signin\index.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\signin\signin.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\starter-template\index.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\starter-template\starter-template.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\sticky-footer-navbar\index.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\sticky-footer-navbar\sticky-footer-navbar.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\sticky-footer\index.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\sticky-footer\sticky-footer.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\theme\index.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\theme\theme.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\tooltip-viewport\index.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\tooltip-viewport\tooltip-viewport.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\examples\tooltip-viewport\tooltip-viewport.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\favicon.ico" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\getting-started.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\index.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\javascript.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\migration.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\robots.txt" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\ads.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\components\alerts.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\components\badges.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\components\breadcrumbs.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\components\button-dropdowns.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\components\button-groups.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\components\dropdowns.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\components\glyphicons.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\components\input-groups.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\components\jumbotron.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\components\labels.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\components\list-group.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\components\media.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\components\navbar.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\components\navs.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\components\page-header.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\components\pagination.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\components\panels.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\components\progress-bars.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\components\responsive-embed.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\components\thumbnails.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\components\wells.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\css\buttons.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\css\code.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\css\forms.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\css\grid.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\css\helpers.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\css\images.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\css\less.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\css\overview.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\css\responsive-utilities.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\css\sass.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\css\tables.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\css\type.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\customizer-variables.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\footer.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\getting-started\accessibility.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\getting-started\browser-device-support.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\getting-started\community.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\getting-started\disabling-responsiveness.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\getting-started\download.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\getting-started\examples.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\getting-started\grunt.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\getting-started\license.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\getting-started\template.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\getting-started\third-party-support.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\getting-started\tools.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\getting-started\translations.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\getting-started\whats-included.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\header.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\js\affix.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\js\alerts.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\js\buttons.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\js\carousel.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\js\collapse.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\js\dropdowns.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\js\modal.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\js\overview.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\js\popovers.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\js\scrollspy.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\js\tabs.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\js\tooltips.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\js\transitions.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\nav\about.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\nav\components.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\nav\css.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\nav\customize.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\nav\getting-started.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\nav\javascript.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\nav\main.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_includes\nav\migration.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_layouts\default.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_layouts\home.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\Gruntfile.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\grunt\bs-commonjs-generator.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\grunt\bs-lessdoc-parser.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\grunt\bs-raw-files-generator.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\grunt\change-version.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\affix.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\alert.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\button.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\carousel.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\collapse.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\dropdown.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\modal.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\popover.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\scrollspy.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tab.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\index.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\unit\affix.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\unit\alert.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\unit\button.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\unit\carousel.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\unit\collapse.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\unit\dropdown.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\unit\modal.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\unit\phantom.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\unit\popover.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\unit\scrollspy.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\unit\tab.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\unit\tooltip.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\vendor\jquery.min.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\vendor\qunit.css" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\vendor\qunit.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\visual\affix-with-sticky-footer.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\visual\affix.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\visual\alert.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\visual\button.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\visual\carousel.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\visual\collapse.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\visual\dropdown.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\visual\modal.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\visual\popover.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\visual\scrollspy.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\visual\tab.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\visual\tooltip.html" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tooltip.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\transition.js" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\package.js" />
+    <Content Include="Dosyalar1\bootstrap.min.css" />
+    <Content Include="Dosyalar1\image\2728c0ffa84e93d72b3ddc0bdaa95bee.gif" />
+    <Content Include="Dosyalar1\image\2ee6998e34c3e2eff7b894c66cfc5267.jpg" />
+    <Content Include="Dosyalar1\image\31fa315c91ceec3bd78a704171f4b93f.gif" />
+    <Content Include="Dosyalar1\image\f88acab7ffd127b4465659500aa0538f.gif" />
+    <Content Include="Dosyalar1\image\feb-07-2020-15-40-31-1581108057.gif" />
+    <Content Include="Dosyalar1\image\steam.jpg" />
+    <Content Include="Dosyalar1\image\tas.jpg" />
+    <Content Include="Dosyalar1\jquery-1.12.0.min.js" />
+    <Content Include="Dosyalar1\js-bootstrap.min.js" />
+    <Content Include="Dosyalar1\maxresdefault.jpg" />
+    <Content Include="Dosyalar1\pano.jpg" />
+    <Content Include="Dosyalar1\sidebar\bootstrap-3\index.html" />
+    <Content Include="Dosyalar1\sidebar\bootstrap-3\index2.html" />
+    <Content Include="Dosyalar1\sidebar\bootstrap-3\index3.html" />
+    <Content Include="Dosyalar1\sidebar\bootstrap-3\index4.html" />
+    <Content Include="Dosyalar1\sidebar\bootstrap-3\index5.html" />
+    <Content Include="Dosyalar1\sidebar\bootstrap-3\style.css" />
+    <Content Include="Dosyalar1\sidebar\bootstrap-3\style2.css" />
+    <Content Include="Dosyalar1\sidebar\bootstrap-3\style3.css" />
+    <Content Include="Dosyalar1\sidebar\bootstrap-3\style4.css" />
+    <Content Include="Dosyalar1\sidebar\bootstrap-3\style5.css" />
+    <Content Include="Dosyalar1\sidebar\index.html" />
+    <Content Include="Dosyalar1\sidebar\index2.html" />
+    <Content Include="Dosyalar1\sidebar\index3.html" />
+    <Content Include="Dosyalar1\sidebar\index4.html" />
+    <Content Include="Dosyalar1\sidebar\index5.html" />
+    <Content Include="Dosyalar1\sidebar\pano.jpg" />
+    <Content Include="Dosyalar1\sidebar\style.css" />
+    <Content Include="Dosyalar1\sidebar\style2.css" />
+    <Content Include="Dosyalar1\sidebar\style3.css" />
+    <Content Include="Dosyalar1\sidebar\style4.css" />
+    <Content Include="Dosyalar1\sidebar\style5.css" />
+    <Content Include="Dosyalar1\StyleSheet2.css" />
+    <Content Include="fonts\ElegantIcons.svg" />
+    <Content Include="fonts\Flaticon.svg" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="formadministasyon.aspx" />
+    <Content Include="formadminkalip.aspx" />
+    <Content Include="formadminkalipdetay.aspx" />
+    <Content Include="formdevamedenislem.aspx" />
+    <Content Include="formduraklamaislem.aspx" />
+    <Content Include="formduraklamalar.aspx" />
+    <Content Include="formguncellemeislem.aspx" />
+    <Content Include="formislemekle.aspx" />
+    <Content Include="formislemsil.aspx" />
+    <Content Include="formtakip.aspx" />
+    <Content Include="formtakipadmin.aspx" />
+    <Content Include="formtakipbekleme.aspx" />
+    <Content Include="formtakipekle.aspx" />
+    <Content Include="formtakiplogin.aspx" />
+    <Content Include="formtakipsira.aspx" />
+    <Content Include="formtakipsiraupdate.aspx" />
+    <Content Include="formtakiptamamlanan.aspx" />
+    <Content Include="formtakiptamamview.aspx" />
+    <Content Include="formtakipuretimview.aspx" />
+    <Content Include="formtamamdetay.aspx" />
+    <Content Include="formtamamlananislem.aspx" />
+    <Content Include="formtimezone.aspx" />
+    <Content Include="HedefMiktar.aspx" />
+    <Content Include="img\404.png" />
+    <Content Include="img\about-us.png" />
+    <Content Include="img\achievement-bg.jpg" />
+    <Content Include="img\blog\blog-1.jpg" />
+    <Content Include="img\blog\blog-2.jpg" />
+    <Content Include="img\blog\blog-3.jpg" />
+    <Content Include="img\blog\blog-4.jpg" />
+    <Content Include="img\blog\blog-5.jpg" />
+    <Content Include="img\blog\blog-6.jpg" />
+    <Content Include="img\blog\blog-7.jpg" />
+    <Content Include="img\blog\blog-8.jpg" />
+    <Content Include="img\blog\details\blog-details.jpg" />
+    <Content Include="img\blog\details\blog-profile.jpg" />
+    <Content Include="img\blog\details\comment\comment-1.jpg" />
+    <Content Include="img\blog\details\comment\comment-2.jpg" />
+    <Content Include="img\blog\details\comment\comment-3.jpg" />
+    <Content Include="img\blog\details\details-hero.jpg" />
+    <Content Include="img\choose-plan.png" />
+    <Content Include="img\footer-bg.png" />
+    <Content Include="img\hero\hero-1.jpg" />
+    <Content Include="img\hero\hero-right.png" />
+    <Content Include="img\hosting\tab-1.png" />
+    <Content Include="img\line.png" />
+    <Content Include="img\logo.png" />
+    <Content Include="img\team\team-1.jpg" />
+    <Content Include="img\team\team-2.jpg" />
+    <Content Include="img\team\team-3.jpg" />
+    <Content Include="img\team\team-4.jpg" />
+    <Content Include="img\testimonial\logo.png" />
+    <Content Include="img\testimonial\testimonial-1.jpg" />
+    <Content Include="img\testimonial\testimonial-2.jpg" />
+    <Content Include="img\testimonial\testimonial-3.jpg" />
+    <Content Include="img\title.png" />
+    <Content Include="js\bootstrap.min.js" />
+    <Content Include="js\jquery-3.3.1.min.js" />
+    <Content Include="js\jquery.slicknav.js" />
+    <Content Include="js\main.js" />
+    <Content Include="js\owl.carousel.min.js" />
+    <Content Include="kalite.aspx" />
+    <Content Include="kaliterapor.aspx" />
+    <Content Include="Menu.aspx" />
+    <Content Include="soft-ui-dashboard-main\assets\css\nucleo-icons.css" />
+    <Content Include="soft-ui-dashboard-main\assets\css\nucleo-svg.css" />
+    <Content Include="soft-ui-dashboard-main\assets\css\soft-ui-dashboard.css" />
+    <Content Include="soft-ui-dashboard-main\assets\css\soft-ui-dashboard.min.css" />
+    <Content Include="soft-ui-dashboard-main\assets\fonts\nucleo-icons.svg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\bruce-mars.jpg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\curved-images\curved0.jpg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\curved-images\curved1.jpg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\curved-images\curved14.jpg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\curved-images\curved6.jpg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\curved-images\curved8.jpg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\curved-images\white-curved.jpeg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\down-arrow-dark.svg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\down-arrow.svg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\favicon.png" />
+    <Content Include="soft-ui-dashboard-main\assets\img\home-decor-1.jpg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\home-decor-2.jpg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\home-decor-3.jpg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\illustrations\rocket-white.png" />
+    <Content Include="soft-ui-dashboard-main\assets\img\ivana-square.jpg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\ivancik.jpg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\kal-visuals-square.jpg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\logos\mastercard.png" />
+    <Content Include="soft-ui-dashboard-main\assets\img\logos\visa.png" />
+    <Content Include="soft-ui-dashboard-main\assets\img\marie.jpg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\shapes\waves-white.svg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\small-logos\icon-sun-cloud.png" />
+    <Content Include="soft-ui-dashboard-main\assets\img\small-logos\logo-atlassian.svg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\small-logos\logo-invision.svg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\small-logos\logo-jira.svg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\small-logos\logo-slack.svg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\small-logos\logo-spotify.svg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\small-logos\logo-webdev.svg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\small-logos\logo-xd.svg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\team-1.jpg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\team-2.jpg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\team-3.jpg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\team-4.jpg" />
+    <Content Include="soft-ui-dashboard-main\assets\img\vr-bg.jpg" />
+    <Content Include="soft-ui-dashboard-main\assets\js\core\bootstrap.min.js" />
+    <Content Include="soft-ui-dashboard-main\assets\js\core\popper.min.js" />
+    <Content Include="soft-ui-dashboard-main\assets\js\plugins\bootstrap-notify.js" />
+    <Content Include="soft-ui-dashboard-main\assets\js\plugins\Chart.extension.js" />
+    <Content Include="soft-ui-dashboard-main\assets\js\plugins\chartjs.min.js" />
+    <Content Include="soft-ui-dashboard-main\assets\js\plugins\choices.min.js" />
+    <Content Include="soft-ui-dashboard-main\assets\js\plugins\fullcalendar.min.js" />
+    <Content Include="soft-ui-dashboard-main\assets\js\plugins\perfect-scrollbar.min.js" />
+    <Content Include="soft-ui-dashboard-main\assets\js\plugins\smooth-scrollbar.min.js" />
+    <Content Include="soft-ui-dashboard-main\assets\js\soft-ui-dashboard.js" />
+    <Content Include="soft-ui-dashboard-main\assets\js\soft-ui-dashboard.min.js" />
+    <Content Include="soft-ui-dashboard-main\docs\documentation.html" />
+    <Content Include="soft-ui-dashboard-main\gulpfile.js" />
+    <Content Include="soft-ui-dashboard-main\media\soft-ui-dashboard-intro.gif" />
+    <Content Include="soft-ui-dashboard-main\media\soft-ui-dashboard-screen-billing.png" />
+    <Content Include="soft-ui-dashboard-main\media\soft-ui-dashboard-screen-login.png" />
+    <Content Include="soft-ui-dashboard-main\media\soft-ui-dashboard-screen-profile.png" />
+    <Content Include="soft-ui-dashboard-main\media\soft-ui-dashboard-screen-rtl.png" />
+    <Content Include="soft-ui-dashboard-main\media\soft-ui-dashboard-screen.png" />
+    <Content Include="soft-ui-dashboard-main\pages\billing.html" />
+    <Content Include="soft-ui-dashboard-main\pages\dashboard.html" />
+    <Content Include="soft-ui-dashboard-main\pages\profile.html" />
+    <Content Include="soft-ui-dashboard-main\pages\rtl.html" />
+    <Content Include="soft-ui-dashboard-main\pages\sign-in.html" />
+    <Content Include="soft-ui-dashboard-main\pages\sign-up.html" />
+    <Content Include="soft-ui-dashboard-main\pages\tables.html" />
+    <Content Include="soft-ui-dashboard-main\pages\virtual-reality.html" />
+    <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataSet1.cs">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="formadministasyon.aspx.cs">
+      <DependentUpon>formadministasyon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formadministasyon.aspx.designer.cs">
+      <DependentUpon>formadministasyon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formadminkalip.aspx.cs">
+      <DependentUpon>formadminkalip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formadminkalip.aspx.designer.cs">
+      <DependentUpon>formadminkalip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formadminkalipdetay.aspx.cs">
+      <DependentUpon>formadminkalipdetay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formadminkalipdetay.aspx.designer.cs">
+      <DependentUpon>formadminkalipdetay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formdevamedenislem.aspx.cs">
+      <DependentUpon>formdevamedenislem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formdevamedenislem.aspx.designer.cs">
+      <DependentUpon>formdevamedenislem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formduraklamaislem.aspx.cs">
+      <DependentUpon>formduraklamaislem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formduraklamaislem.aspx.designer.cs">
+      <DependentUpon>formduraklamaislem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formduraklamalar.aspx.cs">
+      <DependentUpon>formduraklamalar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formduraklamalar.aspx.designer.cs">
+      <DependentUpon>formduraklamalar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formguncellemeislem.aspx.cs">
+      <DependentUpon>formguncellemeislem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formguncellemeislem.aspx.designer.cs">
+      <DependentUpon>formguncellemeislem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formislemekle.aspx.cs">
+      <DependentUpon>formislemekle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formislemekle.aspx.designer.cs">
+      <DependentUpon>formislemekle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formislemsil.aspx.cs">
+      <DependentUpon>formislemsil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formislemsil.aspx.designer.cs">
+      <DependentUpon>formislemsil.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formtakip.aspx.cs">
+      <DependentUpon>formtakip.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formtakip.aspx.designer.cs">
+      <DependentUpon>formtakip.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formtakipadmin.aspx.cs">
+      <DependentUpon>formtakipadmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formtakipadmin.aspx.designer.cs">
+      <DependentUpon>formtakipadmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formtakipbekleme.aspx.cs">
+      <DependentUpon>formtakipbekleme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formtakipbekleme.aspx.designer.cs">
+      <DependentUpon>formtakipbekleme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formtakipekle.aspx.cs">
+      <DependentUpon>formtakipekle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formtakipekle.aspx.designer.cs">
+      <DependentUpon>formtakipekle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formtakiplogin.aspx.cs">
+      <DependentUpon>formtakiplogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formtakiplogin.aspx.designer.cs">
+      <DependentUpon>formtakiplogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formtakipsira.aspx.cs">
+      <DependentUpon>formtakipsira.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formtakipsira.aspx.designer.cs">
+      <DependentUpon>formtakipsira.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formtakipsiraupdate.aspx.cs">
+      <DependentUpon>formtakipsiraupdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formtakipsiraupdate.aspx.designer.cs">
+      <DependentUpon>formtakipsiraupdate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formtakiptamamlanan.aspx.cs">
+      <DependentUpon>formtakiptamamlanan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formtakiptamamlanan.aspx.designer.cs">
+      <DependentUpon>formtakiptamamlanan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formtakiptamamview.aspx.cs">
+      <DependentUpon>formtakiptamamview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formtakiptamamview.aspx.designer.cs">
+      <DependentUpon>formtakiptamamview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formtakipuretimview.aspx.cs">
+      <DependentUpon>formtakipuretimview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formtakipuretimview.aspx.designer.cs">
+      <DependentUpon>formtakipuretimview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formtamamdetay.aspx.cs">
+      <DependentUpon>formtamamdetay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formtamamdetay.aspx.designer.cs">
+      <DependentUpon>formtamamdetay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formtamamlananislem.aspx.cs">
+      <DependentUpon>formtamamlananislem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formtamamlananislem.aspx.designer.cs">
+      <DependentUpon>formtamamlananislem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="formtimezone.aspx.cs">
+      <DependentUpon>formtimezone.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="formtimezone.aspx.designer.cs">
+      <DependentUpon>formtimezone.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HedefMiktar.aspx.cs">
+      <DependentUpon>HedefMiktar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HedefMiktar.aspx.designer.cs">
+      <DependentUpon>HedefMiktar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="kalite.aspx.cs">
+      <DependentUpon>kalite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kalite.aspx.designer.cs">
+      <DependentUpon>kalite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="kaliterapor.aspx.cs">
+      <DependentUpon>kaliterapor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="kaliterapor.aspx.designer.cs">
+      <DependentUpon>kaliterapor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MENU.Master.cs">
+      <DependentUpon>MENU.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MENU.Master.designer.cs">
+      <DependentUpon>MENU.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site2.Master.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site2.Master.designer.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site3.Master.cs">
+      <DependentUpon>Site3.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site3.Master.designer.cs">
+      <DependentUpon>Site3.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site4.Master.cs">
+      <DependentUpon>Site4.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site4.Master.designer.cs">
+      <DependentUpon>Site4.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Dosyalar1\bootstrap-3.3.7\.editorconfig" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\.gitattributes" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\.gitignore" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\.hound.yml" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\.travis.yml" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\bower.json" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\CHANGELOG.md" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\CNAME" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\composer.json" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\CONTRIBUTING.md" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\dist\css\bootstrap-theme.css.map" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\dist\css\bootstrap.css.map" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\dist\css\bootstrap.min.css.map" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\assets\css\docs.min.css.map" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\dist\css\bootstrap-theme.css.map" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\dist\css\bootstrap.css.map" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\dist\css\bootstrap.min.css.map" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\LICENSE" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_data\browser-bugs.yml" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_data\browser-features.yml" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_data\core-team.yml" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_data\glyphicons.yml" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_data\sass-team.yml" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_data\showcase.yml" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_data\translations.yml" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_plugins\bridge.rb" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_plugins\bugify.rb" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_pug\customizer-nav.pug" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\docs\_pug\customizer-variables.pug" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\Gemfile" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\Gemfile.lock" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\grunt\.jshintrc" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\grunt\configBridge.json" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\grunt\npm-shrinkwrap.json" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\grunt\sauce_browsers.yml" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\ISSUE_TEMPLATE.md" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\.jscsrc" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\.jshintrc" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\README.md" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\js\tests\unit\.jshintrc" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\.csscomb.json" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\.csslintrc" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\alerts.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\badges.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\bootstrap.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\breadcrumbs.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\button-groups.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\buttons.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\carousel.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\close.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\code.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\component-animations.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\dropdowns.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\forms.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\glyphicons.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\grid.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\input-groups.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\jumbotron.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\labels.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\list-group.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\media.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\mixins.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\modals.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\navbar.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\navs.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\normalize.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\pager.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\pagination.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\panels.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\popovers.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\print.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\progress-bars.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\responsive-embed.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\responsive-utilities.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\scaffolding.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\tables.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\theme.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\thumbnails.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\less\tooltip.less" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\LICENSE" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\package.json" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\README.md" />
+    <Content Include="Dosyalar1\bootstrap-3.3.7\_config.yml" />
+    <Content Include="DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <None Include="DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Content>
+    <Content Include="MENU.Master" />
+    <Content Include="fonts\ElegantIcons.eot" />
+    <Content Include="fonts\ElegantIcons.ttf" />
+    <Content Include="fonts\ElegantIcons.woff" />
+    <Content Include="fonts\Flaticon.eot" />
+    <Content Include="fonts\Flaticon.ttf" />
+    <Content Include="fonts\Flaticon.woff" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <None Include="packages.config" />
+    <Content Include="Site1.Master" />
+    <Content Include="Site2.Master" />
+    <Content Include="Source\bootstrap-4.4.1-dist.zip" />
+    <Content Include="Source\flation.zip" />
+    <Content Include="Source\font-awesome-4.7.0.zip" />
+    <Content Include="Source\OwlCarousel2-2.3.4.zip" />
+    <Content Include="Source\sass.zip" />
+    <Content Include="Source\SlickNav-master.zip" />
+    <Content Include="Site3.Master" />
+    <Content Include="Site4.Master" />
+    <Content Include="soft-ui-dashboard-main\.gitattributes" />
+    <Content Include="soft-ui-dashboard-main\assets\css\soft-ui-dashboard.css.map" />
+    <Content Include="soft-ui-dashboard-main\assets\fonts\nucleo-icons.eot" />
+    <Content Include="soft-ui-dashboard-main\assets\fonts\nucleo-icons.ttf" />
+    <Content Include="soft-ui-dashboard-main\assets\fonts\nucleo-icons.woff" />
+    <Content Include="soft-ui-dashboard-main\assets\fonts\nucleo-icons.woff2" />
+    <Content Include="soft-ui-dashboard-main\assets\fonts\nucleo.eot" />
+    <Content Include="soft-ui-dashboard-main\assets\fonts\nucleo.ttf" />
+    <Content Include="soft-ui-dashboard-main\assets\fonts\nucleo.woff" />
+    <Content Include="soft-ui-dashboard-main\assets\fonts\nucleo.woff2" />
+    <Content Include="soft-ui-dashboard-main\assets\js\soft-ui-dashboard.js.map" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\badges\_badge-circle.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\badges\_badge-dot.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\badges\_badge-floating.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\badges\_badge.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\bootstrap-grid.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\bootstrap-reboot.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\bootstrap-utilities.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\bootstrap.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\forms\_floating-labels.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\forms\_form-check.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\forms\_form-control.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\forms\_form-range.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\forms\_form-select.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\forms\_form-text.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\forms\_input-group.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\forms\_labels.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\forms\_validation.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\helpers\_clearfix.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\helpers\_colored-links.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\helpers\_position.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\helpers\_ratio.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\helpers\_stretched-link.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\helpers\_text-truncation.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\helpers\_visually-hidden.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_alert.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_border-radius.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_box-shadow.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_breakpoints.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_buttons.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_caret.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_clearfix.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_color-scheme.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_container.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_deprecate.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_forms.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_gradients.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_grid.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_image.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_list-group.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_lists.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_pagination.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_reset-text.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_resize.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_table-variants.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_text-truncate.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_transition.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_utilities.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\mixins\_visually-hidden.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\utilities\_api.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\vendor\_rfs.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_accordion.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_alert.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_badge.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_breadcrumb.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_button-group.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_buttons.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_card.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_carousel.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_close.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_containers.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_dropdown.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_forms.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_functions.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_grid.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_helpers.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_images.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_list-group.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_mixins.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_modal.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_nav.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_navbar.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_offcanvas.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_pagination.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_popover.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_progress.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_reboot.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_root.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_spinners.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_tables.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_toasts.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_tooltip.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_transitions.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_type.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_utilities.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\bootstrap\_variables.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\cards\card-background.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\cards\card-blog.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\cards\card-horizontal.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\cards\card-pricing.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\cards\card-profile.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\custom\_styles.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\custom\_variables.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\forms\_form-check.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\forms\_form-select.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\forms\_form-switch.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\forms\_forms.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\forms\_input-group.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\forms\_inputs.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\forms\_labels.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\mixins\mixins.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\mixins\_badge.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\mixins\_colored-shadows.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\mixins\_hover.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\mixins\_social-buttons.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\free\plugins.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\free\_flatpickr.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\free\_nouislider.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\free\_perfect-scrollbar.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\free\_prism.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\pro\multi-step.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\pro\plugins-extend.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\pro\_carousel-slick.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\pro\_choices.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\pro\_datatable-extend.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\pro\_datatable.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\pro\_dragula.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\pro\_dropzone.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\pro\_fullcalendar-extend.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\pro\_fullcalendar.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\pro\_glidejs.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\pro\_highlight.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\pro\_kanban.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\pro\_leaflet.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\pro\_list-check.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\pro\_photoswipe.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\pro\_quill.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\pro\_rating-widget.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\pro\_sweetalert2-extend.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\plugins\pro\_sweetalert2.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\theme-pro.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\theme.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_animations.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_avatars.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_badge.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_breadcrumb.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_cards-extend.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_cards.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_choices.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_dropdowns.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_fixed-plugin.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_form-switch.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_full-calendar.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_header.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_info-areas.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_misc-extend.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_misc.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_navbar-vertical.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_navbar.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_pagination.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_rtl.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_social-buttons.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_table.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_timeline.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_utilities-extend.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_utilities.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\variables\_virtual-reality.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_accordion.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_alert.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_avatars.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_backgrounds.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_badge.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_breadcrumbs.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_buttons.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_cards-extend.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_cards.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_components.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_dropdown-extend.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_dropdown.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_dropup.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_fixed-plugin.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_floating-elements.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_footer.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_forms.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_gradients.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_header.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_info-areas.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_list-check.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_misc-extend.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_misc.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_nav.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_navbar-vertical-extend.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_navbar-vertical.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_navbar.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_pagination.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_popovers.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_progress.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_rtl-extend.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_rtl.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_social-buttons.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_tables.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_tilt.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_timeline.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_tooltips.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_typography.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_utilities-extend.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_utilities.scss" />
+    <Content Include="soft-ui-dashboard-main\assets\scss\soft-ui-dashboard\_variables.scss" />
+    <Content Include="soft-ui-dashboard-main\CHANGELOG.md" />
+    <Content Include="soft-ui-dashboard-main\ISSUE_TEMPLATE.md" />
+    <Content Include="soft-ui-dashboard-main\LICENSE" />
+    <Content Include="soft-ui-dashboard-main\package.json" />
+    <Content Include="soft-ui-dashboard-main\README.md" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61107</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44345/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.1.1\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

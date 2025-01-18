@@ -1,0 +1,172 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MENU.master.cs" Inherits="moldfollow.MENU" %>
+
+<!DOCTYPE html>
+
+
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="KALIP/>
+    <meta name="keywords" content="KALIP, unica, creative, html"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>KALIP TAKIP</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900&display=swap"
+        rel="stylesheet"/>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css"/>
+    <link rel="stylesheet" href="css/flaticon.css" type="text/css"/>
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css"/>
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+        <!-- Pricing Section Begin -->
+    <section class="pricing-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-7">
+                    <div class="section-title normal-title">
+                        <h3>MENU</h3>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-5">
+                    <div class="pricing__swipe-btn">
+                        <label for="month" class="active">Kalıp Takip
+                            <input type="radio" id="month">
+                        </label>
+                        <label for="yearly">NOVA
+                            <input type="radio" id="yearly">
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="row monthly__plans active">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="pricing__item">
+                        <h4>Kalıphane</h4>
+                        <h3>İSTASYON<span> / CNC</span></h3>
+                        <ul>
+                            <li>CNC I (MV204-C)</li>
+                            <li>CNC II (MV184-C)</li>
+                  
+                        </ul>
+                        <a href="formtamamlananislem.aspx" target="_blank" class="primary-btn">SAYFAYA İLERLE</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="pricing__item">
+                        <h4>Kalıphane</h4>
+                        <h3>İSTASYON <span>/ BAKIM</span></h3>
+                        <ul>
+                            <li>Revizyon</li>
+                            <li>Genel Bakım</li>
+                      
+                        </ul>
+                        <a href="formtakipbekleme.aspx" target="_blank" class="primary-btn">SAYFAYA İLERLE</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="pricing__item">
+                        <h4>Üretim</h4>
+                        <h3>ARIZA <span>/ Bildir</span></h3>
+                        <ul>
+                               <li>Yeni Bildirim</li>
+                            <li>Bakım Talebi</li>
+                       
+                        </ul>
+                        <a href="formtakipekle.aspx" target="_blank" class="primary-btn">SAYFAYA İLERLE</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="pricing__item">
+                        <h4>Nova</h4>
+                        <h3>Raporlama <span>/ İst</span></h3>
+                        <ul>
+                            <li>İstatistikler</li>
+                            <li>Grafikler</li>
+                    
+                        </ul>
+                        <a href="formadminkalip.aspx" target="_blank" class="primary-btn">SAYFAYA İLERLE</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row yearly__plans">
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="pricing__item">
+                        <h4>Started</h4>
+                        <h3>$150 <span>/ month</span></h3>
+                        <ul>
+                            <li>Yeni Bildirim</li>
+                            <li>Bakım Talebi</li>
+               
+                        </ul>
+                        <a href="#" class="primary-btn">Choose plan</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="pricing__item">
+                        <h4>Business</h4>
+                        <h3>$250 <span>/ month</span></h3>
+                        <ul>
+                            <li>90 GB web space</li>
+                            <li>Free site buiding tools</li>
+                            <li>Free domain registar</li>
+                            <li>24/7 Support</li>
+                            <li>Free marketing tool</li>
+                            <li>99,9% Services uptime</li>
+                            <li>30 day money back</li>
+                        </ul>
+                        <a href="#" class="primary-btn">Choose plan</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="pricing__item">
+                        <h4>Premium</h4>
+                        <h3>$350 <span>/ month</span></h3>
+                        <ul>
+                            <li>150 GB web space</li>
+                            <li>Free site buiding tools</li>
+                            <li>Free domain registar</li>
+                            <li>24/7 Support</li>
+                            <li>Free marketing tool</li>
+                            <li>99,9% Services uptime</li>
+                            <li>30 day money back</li>
+                        </ul>
+                        <a href="#" class="primary-btn">Choose plan</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="pricing__item">
+                        <h4>Dedicated</h4>
+                        <h3>$450 <span>/ month</span></h3>
+                        <ul>
+                            <li>Unlimited web space</li>
+                            <li>Free site buiding tools</li>
+                            <li>Free domain registar</li>
+                            <li>24/7 Support</li>
+                            <li>Free marketing tool</li>
+                            <li>99,9% Services uptime</li>
+                            <li>30 day money back</li>
+                        </ul>
+                        <a href="#" class="primary-btn">Choose plan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Pricing Section End -->
+</body>
+</html>
