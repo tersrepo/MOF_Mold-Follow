@@ -1,6 +1,13 @@
 # MOF_Mold-Follow
-Bu proje, ASP.NET Web Forms (C#) ve MSSQL veritabanını kullanarak kalıp takibi, maliyet analizleri, kalite departmanı proses takibi ve personel-istasyon ilişki yönetimi yapmaya yarayan bir uygulamadır.
-Proje içerisindeki sayfalar (ASPX) ve kodlar, DevExpress kontrol kütüphaneleri (örn. Chart, Grid, CardView, vb.) ile zenginleştirilmiştir.
+
+Bu proje, **2022 Kasım** ayında ASP.NET Web Forms (C#) ve MSSQL veritabanı kullanılarak geliştirilmiştir. Projenin amacı, kalıp takibi, maliyet analizleri, kalite departmanı proses takibi ve personel-istasyon ilişki yönetimi gibi operasyonel süreçleri dijitalleştirmek ve kolaylaştırmaktır.
+
+Proje içerisindeki sayfalar (ASPX) ve kodlar, DevExpress kontrol kütüphaneleri (örn. Chart, Grid, CardView, vb.) ile zenginleştirilmiş olup modern ve işlevsel bir kullanıcı deneyimi sunmaktadır.
+
+### 2025 Geliştirme Süreci
+Bu projeyi **2025 yılında daha iyi bir hale getirmek** için GitHub'a yükledim. Projeyi geliştirmek ve yeni özellikler eklemek amacıyla açık kaynaklı hale getirdim. 
+
+Eğer bu alanda bir katkıda bulunmak veya benimle birlikte geliştirme sürecine katılmak isterseniz, projeye **Pull Request** gönderebilir veya benimle iletişime geçebilirsiniz.
 
 ![Kalıp Raporlama Ekranı](screenshots/kalip_raporlama.png)
 ![İstasyon Kart Görünümü](screenshots/istasyon_kart.png)
